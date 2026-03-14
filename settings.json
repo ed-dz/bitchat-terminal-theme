@@ -24,18 +24,16 @@
         "list": [
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "bitchat // PowerShell",
+                "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore",
                 "commandline": "pwsh.exe -NoLogo -ExecutionPolicy Bypass",
-                "startingDirectory": "%USERPROFILE%",
-                "tabTitle": "bitchat*"
+                "startingDirectory": "%USERPROFILE%"
             },
             {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "bitchat // CMD",
+                "name": "Command Prompt",
                 "commandline": "cmd.exe",
-                "startingDirectory": "%USERPROFILE%",
-                "tabTitle": "bitchat*"
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
