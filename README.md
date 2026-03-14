@@ -6,35 +6,17 @@ A Windows Terminal colour scheme and PowerShell profile inspired by **[bitchat](
 
 ---
 
+## Preview
+
+![bitchat terminal theme preview](preview.png)
+
+---
+
 ## Inspiration
 
 The first time I saw bitchat, it wasn't the tech that hooked me — it was the *aesthetic*.
 
-Pure black background. Neon green monospace text. Timestamps on every line. System events in cyan. A prompt that looks like `<@nick>`. No gradients, no rounded corners, no dark-mode greys. Just signal and noise, rendered in phosphor green on a screen that feels like it's running at 3am on a rooftop.
-
-That's the energy this terminal profile tries to bring to your everyday Windows Terminal.
-
----
-
-## Preview
-```
-[15:02:01] ~  ✓
-<@yourname> cd projects/bitchat-terminal-theme
-
-[15:02:10] ~/projects/bitchat-terminal-theme [main]  ✓
-<@yourname> dir
-
-    Directory: ~/projects/bitchat-terminal-theme
-
-Mode       LastWriteTime     Length  Name
-----       -------------     ------  ----
--a---  Sat 03 14 2026  15:01   1842  README.md
--a---  Sat 03 14 2026  15:01   3401  settings.json
--a---  Sat 03 14 2026  15:01   4455  Microsoft.PowerShell_profile.ps1
-
-[15:02:18] ~/projects/bitchat-terminal-theme [main]  ✓
-<@yourname> _
-```
+Pure black background. Neon green monospace text. Timestamps on every line. Directories in cyan. A prompt that looks like `<@nick>`. No gradients, no rounded corners, no dark-mode greys. Just signal and noise, rendered in phosphor green on a screen that feels like it's running at 3am on a rooftop.
 
 ---
 
@@ -42,7 +24,7 @@ Mode       LastWriteTime     Length  Name
 
 | File | Purpose |
 |------|---------|
-| `settings.json` | Windows Terminal colour scheme (`bitchat`) + dark tab bar |
+| `settings.json` | Windows Terminal colour scheme + dark tab bar |
 | `Microsoft.PowerShell_profile.ps1` | Prompt with timestamps, path, git branch. PS5 + PS7 compatible |
 
 ---
@@ -83,11 +65,7 @@ if (Test-Path $PROFILE) { Copy-Item $PROFILE "$PROFILE.bak" }
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ed-dz/bitchat-terminal-theme/main/Microsoft.PowerShell_profile.ps1" -OutFile $PROFILE
 ```
 
-Restart Windows Terminal. You'll see:
-```
-[HH:mm:ss] ~  ✓
-<@yourname> _
-```
+Restart Windows Terminal.
 
 ---
 
