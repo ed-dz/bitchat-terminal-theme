@@ -1,7 +1,174 @@
-# ── Fix directory colours — no blue background, clean green ─
-$PSStyle.FileInfo.Directory = "`e[38;2;0;255;204m"      # cyan, no background
-$PSStyle.FileInfo.SymbolicLink = "`e[38;2;127;255;0m"   # bright green
-$PSStyle.FileInfo.Executable = "`e[38;2;57;255;20m"     # neon green
-
-# Remove ALL background colours from file rendering
-$PSStyle.FileInfo.Extension.Clear()
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto"
+      },
+      "id": "User.splitPane.91AB55B1"
+    },
+    {
+      "command": {
+        "action": "closeTab"
+      },
+      "id": "User.closeTab.0"
+    }
+  ],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+  "keybindings": [
+    {
+      "id": "Terminal.FindText",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "id": "Terminal.PasteFromClipboard",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "Terminal.NextTab",
+      "keys": "ctrl+tab"
+    },
+    {
+      "id": "Terminal.OpenNewTab",
+      "keys": "ctrl+t"
+    },
+    {
+      "id": "Terminal.PrevTab",
+      "keys": "ctrl+shift+tab"
+    },
+    {
+      "id": "Terminal.CopyToClipboard",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "Terminal.ToggleFullscreen",
+      "keys": "f11"
+    },
+    {
+      "id": null,
+      "keys": "ctrl+minus"
+    },
+    {
+      "id": null,
+      "keys": "ctrl+plus"
+    },
+    {
+      "id": "User.splitPane.91AB55B1",
+      "keys": "alt+shift+d"
+    },
+    {
+      "id": "User.closeTab.0",
+      "keys": "ctrl+w"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "antialiasingMode": "cleartype",
+      "bellStyle": "none",
+      "colorScheme": "bitchat",
+      "cursorColor": "#39FF14",
+      "cursorShape": "bar",
+      "font": {
+        "face": "JetBrains Mono",
+        "size": 10,
+        "weight": "normal"
+      },
+      "opacity": 97,
+      "padding": "12, 12, 12, 12",
+      "scrollbarState": "hidden",
+      "useAcrylic": false
+    },
+    "list": [
+      {
+        "commandline": "pwsh.exe -NoLogo -ExecutionPolicy Bypass",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "PowerShell",
+        "startingDirectory": "%USERPROFILE%"
+      },
+      {
+        "commandline": "powershell.exe -NoLogo -ExecutionPolicy Bypass",
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "name": "PowerShell (Windows)",
+        "source": "Windows.Terminal.PowershellCore",
+        "startingDirectory": "%USERPROFILE%",
+        "hidden": true
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt",
+        "startingDirectory": "%USERPROFILE%"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#000000",
+      "black": "#111111",
+      "blue": "#00BFFF",
+      "brightBlack": "#333333",
+      "brightBlue": "#87CEEB",
+      "brightCyan": "#40E0D0",
+      "brightGreen": "#7FFF00",
+      "brightPurple": "#DA70D6",
+      "brightRed": "#FF6666",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#FFEC8B",
+      "cursorColor": "#39FF14",
+      "cyan": "#00FFCC",
+      "foreground": "#39FF14",
+      "green": "#39FF14",
+      "name": "bitchat",
+      "purple": "#8A2BE2",
+      "red": "#FF4444",
+      "selectionBackground": "#1A3300",
+      "white": "#CCFFCC",
+      "yellow": "#FFD700"
+    }
+  ],
+  "showTabsInTitlebar": true,
+  "showTerminalTitleInTitlebar": true,
+  "tabWidthMode": "compact",
+  "theme": "bitchat-dark",
+  "windowingBehavior": "useExisting",
+  "useAcrylicInTabRow": false,
+  "tabBar": {
+    "background": "#000000"
+  },
+  "useSystemColorTheme": false,
+  "alwaysShowTabs": true,
+  "themes": [
+    {
+      "name": "bitchat-dark",
+      "tab": {
+        "background": "#000000",
+        "showCloseButton": "always",
+        "unfocusedBackground": "#0a0a0a"
+      },
+      "tabRow": {
+        "background": "#000000",
+        "unfocusedBackground": "#000000"
+      },
+      "window": {
+        "applicationTheme": "dark",
+        "useMica": false
+      }
+    }
+  ]
+}
