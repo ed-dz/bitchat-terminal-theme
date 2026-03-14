@@ -19,13 +19,6 @@ $ITALIC     = ansi "3"
 
 Clear-Host
 
-$ts = Get-Date -Format "HH:mm:ss"
-Write-Host ""
-Write-Host "${CYAN}[${ts}] * ${ITALIC}get people around you to download bitchat${RESET}${CYAN}...and chat with them here! *${RESET}"
-$ts2 = Get-Date -Format "HH:mm:ss"
-Write-Host "${DIM}[${ts2}] * $env:USERNAME connected *${RESET}"
-Write-Host ""
-
 # ── Fix directory colours (PS7+ only) ───────────────────────
 if ($PSVersionTable.PSVersion.Major -ge 7) {
     $PSStyle.FileInfo.Directory    = "`e[38;2;0;255;204m"
@@ -114,6 +107,3 @@ if (Get-Module -ListAvailable -Name PSReadLine) {
     Set-PSReadLineOption -PredictionViewStyle InlineView
     Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 }
-
-Write-Host "${DIM}  type ${GREEN}/help${DIM} for IRC-style commands${RESET}"
-Write-Host ""
