@@ -1,6 +1,6 @@
 # bitchat-terminal-theme
 
-> *IRC vibes. Neon green. Pure black. No fluff.*
+> *Neon green. Pure black. No fluff.*
 
 A Windows Terminal colour scheme and PowerShell profile inspired by **[bitchat](https://github.com/permissionlesstech/bitchat)** — the decentralised Bluetooth mesh chat app with the soul of a 90s IRC client.
 
@@ -10,9 +10,31 @@ A Windows Terminal colour scheme and PowerShell profile inspired by **[bitchat](
 
 The first time I saw bitchat, it wasn't the tech that hooked me — it was the *aesthetic*.
 
-Pure black background. Neon green monospace text. Timestamps on every line. System events in cyan (`* connected *`). A prompt that looks like `<@nick>`. No gradients, no rounded corners, no dark-mode greys. Just signal and noise, rendered in phosphor green on a screen that feels like it's running at 3am on a rooftop.
+Pure black background. Neon green monospace text. Timestamps on every line. System events in cyan. A prompt that looks like `<@nick>`. No gradients, no rounded corners, no dark-mode greys. Just signal and noise, rendered in phosphor green on a screen that feels like it's running at 3am on a rooftop.
 
-That's the energy this terminal profile tries to bring to your everyday Windows Terminal. Every time you open a shell, you get that same feeling — like you're jacked into something real.
+That's the energy this terminal profile tries to bring to your everyday Windows Terminal.
+
+---
+
+## Preview
+```
+[15:02:01] ~  ✓
+<@yourname> cd projects/bitchat-terminal-theme
+
+[15:02:10] ~/projects/bitchat-terminal-theme [main]  ✓
+<@yourname> dir
+
+    Directory: ~/projects/bitchat-terminal-theme
+
+Mode       LastWriteTime     Length  Name
+----       -------------     ------  ----
+-a---  Sat 03 14 2026  15:01   1842  README.md
+-a---  Sat 03 14 2026  15:01   3401  settings.json
+-a---  Sat 03 14 2026  15:01   4455  Microsoft.PowerShell_profile.ps1
+
+[15:02:18] ~/projects/bitchat-terminal-theme [main]  ✓
+<@yourname> _
+```
 
 ---
 
@@ -20,8 +42,8 @@ That's the energy this terminal profile tries to bring to your everyday Windows 
 
 | File | Purpose |
 |------|---------|
-| `settings.json` | Windows Terminal colour scheme (`bitchat`) |
-| `Microsoft.PowerShell_profile.ps1` | PowerShell prompt + IRC-style `/commands` |
+| `settings.json` | Windows Terminal colour scheme (`bitchat`) + dark tab bar |
+| `Microsoft.PowerShell_profile.ps1` | Prompt with timestamps, path, git branch. PS5 + PS7 compatible |
 
 ---
 
@@ -30,9 +52,10 @@ That's the energy this terminal profile tries to bring to your everyday Windows 
 | Role | Hex | |
 |------|-----|-|
 | Primary / foreground | `#39FF14` | Neon green |
-| System events | `#00FFCC` | Cyan |
+| Directories | `#00FFCC` | Cyan |
 | Paths | `#FFD700` | Gold |
-| Bright accent | `#7FFF00` | Lime |
+| Git branch | `#7FFF00` | Lime |
+| Timestamps | `#3a5a3a` | Dim green |
 | Error | `#FF4444` | Red |
 | Background | `#000000` | Pure black |
 
@@ -40,58 +63,31 @@ That's the energy this terminal profile tries to bring to your everyday Windows 
 
 ## Quick Install
 
-### 1. Windows Terminal colour scheme
-
-Press `Ctrl+,` in Windows Terminal → **Open JSON file** → merge the `"bitchat"` entry into your `"schemes"` array, then set:
-```json
-"profiles": {
-  "defaults": {
-    "colorScheme": "bitchat",
-    "font": { "face": "JetBrains Mono", "size": 13 }
-  }
-}
-```
-
-### 2. PowerShell profile
-```powershell
-# Allow scripts
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-
-# Backup existing profile
-if (Test-Path $PROFILE) { Copy-Item $PROFILE "$PROFILE.bak" }
-
-# Download and apply
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ed-dz/bitchat-terminal-theme/main/Microsoft.PowerShell_profile.ps1" -OutFile $PROFILE
-```
-
-Restart Windows Terminal. You'll be greeted with:
-```
-[03:14:01] * get people around you to download bitchat...and chat with them here! *
-[03:14:11] * yourname connected *
-
-  type /help for IRC-style commands
-
-<@yourname> _
-```
-
-### 3. Font (recommended)
+### 1. Font
 ```powershell
 winget install JetBrains.JetBrainsMono
 ```
 
-> If the font doesn't register: find the `.ttf` files, right-click → **Install for all users**.
+> If the font doesn't register: find the `.ttf` files → right-click → **Install for all users**.
 
----
+### 2. Windows Terminal colour scheme
 
-## IRC Commands
+Press `Ctrl+,` → **Open JSON file** → replace contents with `settings.json` from this repo.
 
-| Command | Action |
-|---------|--------|
-| `/help` | Show all commands |
-| `/w` | See who's online |
-| `/clear` | Clear the terminal |
-| `/channels` | Show discovered channels |
-| `/msg <nick>` | Open a DM |
+### 3. PowerShell profile
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+if (Test-Path $PROFILE) { Copy-Item $PROFILE "$PROFILE.bak" }
+
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ed-dz/bitchat-terminal-theme/main/Microsoft.PowerShell_profile.ps1" -OutFile $PROFILE
+```
+
+Restart Windows Terminal. You'll see:
+```
+[HH:mm:ss] ~  ✓
+<@yourname> _
+```
 
 ---
 
@@ -99,7 +95,7 @@ winget install JetBrains.JetBrainsMono
 
 - **[bitchat](https://github.com/permissionlesstech/bitchat)** — the app that started all this
 - **[JetBrains Mono](https://www.jetbrains.com/lp/mono/)** — the font
-- **[Cascadia Mono](https://github.com/microsoft/cascadia-code)** — fallback font, ships with Windows Terminal
+- **[Cascadia Mono](https://github.com/microsoft/cascadia-code)** — fallback font
 
 ---
 
