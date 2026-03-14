@@ -30,36 +30,6 @@ if ($PSVersionTable.PSVersion.Major -ge 7) {
 function ll  { Get-ChildItem -Force @args | Format-Table Mode, LastWriteTime, Length, Name -AutoSize }
 function la  { Get-ChildItem -Force @args }
 
-function /w {
-    $ts = Get-Date -Format "HH:mm:ss"
-    Write-Host "${CYAN}[${ts}] * who's online: ${GREEN}$($env:USERNAME)${RESET}"
-}
-function /clear { Clear-Host }
-function /channels {
-    $ts = Get-Date -Format "HH:mm:ss"
-    Write-Host "${CYAN}[${ts}] * discovered channels: ${GREEN}#general  #ops  #random${RESET}"
-}
-function /help {
-    $cmds = @(
-        @{ Cmd = "/clear";    Desc = "clear the terminal" },
-        @{ Cmd = "/w";        Desc = "see who's online" },
-        @{ Cmd = "/channels"; Desc = "show discovered channels" },
-        @{ Cmd = "/msg";      Desc = "<nick> - open a new tab for that user" },
-        @{ Cmd = "/help";     Desc = "show this help" }
-    )
-    Write-Host ""
-    foreach ($c in $cmds) {
-        $padded = $c.Cmd.PadRight(14)
-        Write-Host "  ${GREEN}${BOLD}${padded}${RESET}  ${DIM}$($c.Desc)${RESET}"
-    }
-    Write-Host ""
-}
-function /msg {
-    param([string]$nick = "?")
-    $ts = Get-Date -Format "HH:mm:ss"
-    Write-Host "${CYAN}[${ts}] * opening DM with ${GREEN}@${nick}${RESET}${CYAN}...${RESET}"
-}
-
 function Get-GitBranch {
     try {
         $branch = git rev-parse --abbrev-ref HEAD 2>$null
@@ -76,7 +46,7 @@ function prompt {
     $path     = $ExecutionContext.SessionState.Path.CurrentLocation
     $shortPath = ($path.ToString() -replace [regex]::Escape($HOME), "~")
     $git      = Get-GitBranch
-    $status   = if ($lastOk) { "${GREEN}✓${RESET}" } else { "${ESC}[38;2;255;68;68m✗ (${exitCode})${RESET}" }
+    $status   = if ($lastOk) { "${GREEN}v${RESET}" } else { "${ESC}[38;2;255;68;68mx (${exitCode})${RESET}" }
     Write-Host "${DIM}[${ts}]${RESET} ${YELLOW}${shortPath}${RESET}${git}  ${status}"
     return "${GREEN}${BOLD}<${nick}>${RESET} "
 }
