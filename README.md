@@ -10,7 +10,7 @@ A Windows Terminal colour scheme and PowerShell profile inspired by **[bitchat](
 
 The first time I saw bitchat, it wasn't the tech that hooked me — it was the *aesthetic*.
 
-Pure black background. Neon green monospace text. Timestamps on every line. System events in cyan (`* rick connected *`). A prompt that looks like `<@jack>`. No gradients, no rounded corners, no dark-mode greys. Just signal and noise, rendered in phosphor green on a screen that feels like it's running at 3am on a rooftop.
+Pure black background. Neon green monospace text. Timestamps on every line. System events in cyan (`* connected *`). A prompt that looks like `<@nick>`. No gradients, no rounded corners, no dark-mode greys. Just signal and noise, rendered in phosphor green on a screen that feels like it's running at 3am on a rooftop.
 
 That's the energy this terminal profile tries to bring to your everyday Windows Terminal. Every time you open a shell, you get that same feeling — like you're jacked into something real.
 
@@ -67,11 +67,11 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ed-dz/bitchat-terminal
 Restart Windows Terminal. You'll be greeted with:
 ```
 [03:14:01] * get people around you to download bitchat...and chat with them here! *
-[03:14:11] * herak connected *
+[03:14:11] * yourname connected *
 
   type /help for IRC-style commands
 
-<@herak> _
+<@yourname> _
 ```
 
 ### 3. Font (recommended)
@@ -85,8 +85,6 @@ winget install JetBrains.JetBrainsMono
 
 ## IRC Commands
 
-Once the profile is loaded:
-
 | Command | Action |
 |---------|--------|
 | `/help` | Show all commands |
@@ -99,7 +97,7 @@ Once the profile is loaded:
 
 ## Credits
 
-- **[bitchat](https://github.com/permissionlesstech/bitchat)** by [@jackjack](https://twitter.com/jack) — the app that started all this
+- **[bitchat](https://github.com/permissionlesstech/bitchat)** — the app that started all this
 - **[JetBrains Mono](https://www.jetbrains.com/lp/mono/)** — the font
 - **[Cascadia Mono](https://github.com/microsoft/cascadia-code)** — fallback font, ships with Windows Terminal
 
